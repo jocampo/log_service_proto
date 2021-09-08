@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/jocampo/log_service_proto#readme",
   "dependencies": {
-    "protobufjs": "^6.11.2",
-    "ts-protoc-gen": "^0.15.0"
+    "protobufjs": "^6.11.2"
   }
 }
