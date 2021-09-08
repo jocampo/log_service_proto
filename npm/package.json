@@ -9,7 +9,7 @@
     "**/*.ts"
   ],
   "scripts": {
-    "compileProto": "./compileProto.sh"
+    "compileProto": "./compileProto.sh",
     "compileProtoWin": "./compileProto.sh"
   },
   "publishConfig": {
