@@ -1,0 +1,36 @@
+{
+  "name": "@jocampo/log-service-proto",
+  "version": "1.0.0",
+  "description": "protobuf definitions package for js/ts",
+  "main": "index.js",
+  "files": [
+    "**/*.proto",
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "scripts": {
+    "compileProto": "./compileProto.sh"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jocampo/log_service_proto.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "protobuf",
+    "log_service"
+  ],
+  "author": "Jorge Ocampo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jocampo/log_service_proto/issues"
+  },
+  "homepage": "https://github.com/jocampo/log_service_proto#readme",
+  "dependencies": {
+    "protobufjs": "^6.11.2",
+    "ts-protoc-gen": "^0.15.0"
+  }
+}
