@@ -1,8 +1,10 @@
 #!/usr/bin/python
+
 import fnmatch
 import os
 import pathlib
 import shutil
+import subprocess
 from os.path import abspath, isfile, join
 
 PWD = pathlib.Path(__file__).parent.resolve()
@@ -23,15 +25,13 @@ if os.path.exists(proto_dir):
 
 shutil.copytree(proto_path, proto_dir)
 
-proto_files = [f for f in os.listdir(proto_path) if isfile(
-    join(proto_path, f))]
-
 proto_files = []
 for root, dirnames, filenames in os.walk(proto_path):
     for filename in fnmatch.filter(filenames, '*.proto'):
-        proto_files.append(filename) # can also use root for abs path
+        proto_files.append(filename)  # can also use root for abs path
 
 print(proto_files)
 
 # JavaScript
+subprocess.run(["pbjs", "--path", proto_dir, " ".join(proto_files)])
 # pbjs --path "${PROTO_DIR}" ${TOP_LEVEL_PROTOS[@]}
