@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package services;
+
+import "proto/src/models/log_message.proto"; // TODO: ?? potentially wrong, probably just models/...
+
+service LogService {
+    // Logs a stream of messages from the client
+    rpc LogMessageStream (stream LogMessageRequest) returns (LogMessageResponse) {}
+    
+    // Logs a message (unary)
+    rpc LogMessage (stream LogMessageRequest) returns (LogMessageResponse) {}
+}
+
+message LogMessageRequest {
+    models.LogMessage log_message = 2;
+}
+
+message LogMessageResponse {
+    // Blank for now
+}

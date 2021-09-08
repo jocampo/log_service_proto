@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package models;
+
+import "google/protobuf/timestamp.proto";
+
+message LogMessage {
+    google.protobuf.Timestamp time = 1;
+
+    // Identity of the sender
+    string identity = 2;
+
+    // Log Severity
+    LogLevel level = 3;
+
+    string message = 4;
+
+    // Optional context, stack trace etc. Freeform string
+    string context = 5;
+
+    // Client Info
+    Client client = 6;
+}
+
+message Client {
+    // Source identifier (app)
+    string name = 1;
+
+    // Source Version
+    string version = 2;
+}
+
+enum LogLevel {
+    TRACE = 0;
+    DEBUG = 1;
+    INFO = 2;
+    WARN = 3;
+    ERROR = 4;
+}
