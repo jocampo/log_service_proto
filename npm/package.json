@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "compileProto": "./compileProto.sh"
+    "compileProtoWin": "./compileProto.sh"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
