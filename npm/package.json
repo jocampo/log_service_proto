@@ -1,6 +1,6 @@
 {
   "name": "@jocampo/log-service-proto",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "protobuf definitions package for js/ts",
   "main": "index.js",
   "files": [

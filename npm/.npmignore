@@ -1,0 +1,5 @@
+# Ignore everything except what we want to publish
+*
+!*.js
+!*.d.ts
+!*.ts
