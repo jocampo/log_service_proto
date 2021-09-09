@@ -39,16 +39,22 @@ for root, dirnames, filenames in os.walk(proto_path):
         proto_files.append(join(root, filename))
 
 # JavaScript Definitions
-command = f"pbjs -t static-module " \
-          f"--path {proto_dir} {' '.join(proto_files)} " \
-          f"--out {js_file} " \
-          f"--es6"
-""
-subprocess.run(["pbjs", "-t", "static-module"], shell=True)
+command_args = [
+    "pbjs",
+    "-t", "static-module",
+    "--path", proto_dir
+]
+command_args.extend(proto_files)
+command_args.extend([
+    "--out", js_file,
+    "--es6"
+])
+
+subprocess.run(command_args, shell=True)
 
 # Typescript Definitions
-command = f"pbts " \
-          f"{js_file} " \
-          f"--out {ts_file}"
-
-subprocess.run(command, shell=True)
+subprocess.run([
+    "pbts",
+    js_file,
+    "--out", ts_file
+], shell=True)
