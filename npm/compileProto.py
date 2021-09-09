@@ -43,7 +43,7 @@ command = f"pbjs -t static-module " \
           f"--path {proto_dir} {' '.join(proto_files)} " \
           f"--out {js_file} " \
           f"--es6"
-""
+
 subprocess.run(command, shell=True)
 
 # Typescript Definitions
