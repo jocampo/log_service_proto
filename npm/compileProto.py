@@ -5,7 +5,7 @@ import os
 import pathlib
 import shutil
 import subprocess
-from os.path import abspath, isfile, join
+from os.path import abspath, join
 
 PWD = pathlib.Path(__file__).parent.resolve()
 
