@@ -35,12 +35,20 @@ shutil.copytree(proto_path, proto_dir)
 proto_files = []
 for root, dirnames, filenames in os.walk(proto_path):
     for filename in fnmatch.filter(filenames, '*.proto'):
-        proto_files.append(join(root, filename))  # can also use root for abs path
+        # can also use root for abs path
+        proto_files.append(join(root, filename))
 
-print(proto_files)
+# JavaScript Definitions
+command = f"pbjs -t static-module " \
+          f"--path {proto_dir} {' '.join(proto_files)} " \
+          f"--out {js_file} " \
+          f"--es6"
 
-# JavaScript
-command = f"npx pbjs --path {proto_dir} {' '.join(proto_files)} --out {js_file} --es6"
-# subprocess.run(["npx"], shell=True)
 subprocess.run(command, shell=True)
-# pbjs --path "${PROTO_DIR}" ${TOP_LEVEL_PROTOS[@]}
+
+# Typescript Definitions
+command = f"pbts " \
+          f"{js_file} " \
+          f"--out {ts_file}"
+
+subprocess.run(command, shell=True)
