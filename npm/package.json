@@ -9,8 +9,7 @@
     "**/*.ts"
   ],
   "scripts": {
-    "compileProto": "./compileProto.sh",
-    "compileProtoWin": "./compileProto.sh"
+    "compileProto": "python ./compileProto.py"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
