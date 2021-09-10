@@ -6,7 +6,7 @@ import subprocess
 
 from os.path import abspath, join
 
-subprocess.run("pip install grpcio-tools")
+subprocess.run("pip3 install grpcio-tools", shell=True)
 
 PWD = pathlib.Path(__file__).parent.resolve()
 
@@ -32,12 +32,12 @@ for root, _, filenames in os.walk(proto_path):
 
 proto_import_paths.add(proto_root_path)
 
-command = f"python -m grpc_tools.protoc " \
+command = f"python3 -m grpc_tools.protoc " \
           f"--proto_path {proto_path} --proto_path {' --proto_path '.join(proto_import_paths)} " \
           f"--python_out={proto_dir} " \
           f"--grpc_python_out={proto_dir} " \
           f"{' '.join(proto_files)}"
 
 # python -m grpc_tools.protoc -I../../protos --python_out=. --grpc_python_out=. ../../protos/helloworld.proto
-subprocess.run(command)
+subprocess.run(command, shell=True)
 # python -m grpc_tools.protoc -I . --python_out $PYTHON_OUTPUT_DIR --grpc_python_out $PYTHON_OUTPUT_DIR
