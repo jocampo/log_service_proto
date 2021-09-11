@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package services;
 
-import "proto/src/models/log_message.proto"; // TODO: ?? potentially wrong, probably just models/...
+import "models/log_message.proto";
 
 service LogService {
     // Logs a stream of messages from the client
