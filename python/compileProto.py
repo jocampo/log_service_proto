@@ -12,7 +12,7 @@ PWD = pathlib.Path(__file__).parent.resolve()
 proto_path = abspath(join(PWD, "..", "proto", "src"))
 
 # Output folder (where the python definitions will be generated)
-proto_dir = join(PWD, "proto_out")
+proto_dir = join(PWD, "log_service_proto")
 
 if os.path.exists(proto_dir):
     shutil.rmtree(proto_dir)
@@ -32,4 +32,5 @@ command = f"python -m grpc_tools.protoc " \
 
 subprocess.run(command, shell=True)
 
-
+init = open(join(proto_dir, '__init__.py'), 'w+')
+init.close()
