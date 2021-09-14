@@ -142,3 +142,5 @@ cython_debug/
 proto_out/
 
 .DS_Store
+
+log_service_proto/
