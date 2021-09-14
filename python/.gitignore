@@ -140,3 +140,5 @@ cython_debug/
 
 # adhoc
 proto_out/
+
+.DS_Store
