@@ -21,7 +21,7 @@ See [this post](https://packaging.python.org/tutorials/packaging-projects/#uploa
 2. Update the `setup.cfg` file with any changes (such as new version number)
 3. Generate the build
     ```shell
-    python3 -m build
+    python -m build
     ```
 4. **Make sure** that the files in `dist/` reflect what you want to release. Often times `setup.cfg` has errors in it and that causes issues like files being omitted from the dist folders.
 
